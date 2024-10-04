@@ -2562,6 +2562,15 @@
         "name": "assets\\house medium brown_normal left.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/farm_normal left.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\farm_normal left.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -2741,7 +2750,7 @@
     },
     {
       "assetStoreId": "",
-      "name": "trees",
+      "name": "treesbutton_2",
       "type": "SpriteToggleSwitch::SpriteToggleSwitch",
       "variables": [
         {
@@ -3397,6 +3406,52 @@
         "characterSize": 25,
         "color": "255;255;255"
       }
+    },
+    {
+      "adaptCollisionMaskAutomatically": false,
+      "assetStoreId": "",
+      "name": "Treetile",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "ShakeObject_PositionAngleScale",
+          "type": "ShakeObject::ShakeObject_PositionAngleScale"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\Trees.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 60,
+                    "y": 70
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -3409,7 +3464,7 @@
         "objectName": "HouseButton"
       },
       {
-        "objectName": "trees"
+        "objectName": "treesbutton_2"
       },
       {
         "objectName": "Indicator"
@@ -3434,6 +3489,9 @@
       },
       {
         "objectName": "StoneLabel"
+      },
+      {
+        "objectName": "Treetile"
       },
       {
         "objectName": "Vignette"
@@ -3463,7 +3521,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.3616611424653829,
+        "zoomFactor": 0.5038861550982182,
         "windowMask": false
       },
       "objectsGroups": [
@@ -3586,8 +3644,8 @@
           "name": "Indicator",
           "persistentUuid": "437f8fa1-abc2-4537-b8a4-e839d9fd54f4",
           "width": 0,
-          "x": 1560,
-          "y": 490,
+          "x": 1650,
+          "y": 455,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -3848,52 +3906,6 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets\\power station_normal left.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 60,
-                        "y": 70
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": false,
-          "assetStoreId": "",
-          "name": "Treetile",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "ShakeObject_PositionAngleScale",
-              "type": "ShakeObject::ShakeObject_PositionAngleScale"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "assets\\Trees.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -11878,9 +11890,6 @@
             "folderName": "tiles",
             "children": [
               {
-                "objectName": "Treetile"
-              },
-              {
                 "objectName": "MineTile"
               },
               {
@@ -12489,6 +12498,23 @@
                           ]
                         }
                       ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Toolbar::SelectedTool"
+                          },
+                          "parameters": [
+                            "",
+                            "=",
+                            "\"Lumber\"",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": []
                     }
                   ]
                 },
@@ -12935,7 +12961,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.49508400737488867,
+        "zoomFactor": 0.35534345588169836,
         "windowMask": false
       },
       "objectsGroups": [
@@ -12977,15 +13003,21 @@
       "variables": [
         {
           "folded": true,
-          "name": "Stone",
+          "name": "Gold",
           "type": "number",
-          "value": 0
+          "value": 40
         },
         {
           "folded": true,
           "name": "Lumber",
           "type": "number",
-          "value": 0
+          "value": 20
+        },
+        {
+          "folded": true,
+          "name": "Stone",
+          "type": "number",
+          "value": 20
         }
       ],
       "instances": [
@@ -13152,41 +13184,9 @@
           "name": "Vignette",
           "persistentUuid": "2b138b87-c754-45ea-8a28-9e53312ab8cd",
           "width": 1278,
-          "x": 0,
-          "y": -5,
+          "x": 2,
+          "y": -1,
           "zOrder": 3,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "GoldLabel",
-          "persistentUuid": "f44e24f4-ef03-4839-83ac-6d70d5bb9336",
-          "width": 0,
-          "x": 177,
-          "y": 148,
-          "zOrder": 4,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "GoldLabel",
-          "persistentUuid": "047203ce-9902-4581-8f18-7c7a588c2abd",
-          "width": 0,
-          "x": 340,
-          "y": 390,
-          "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -13282,8 +13282,8 @@
           "name": "Indicator",
           "persistentUuid": "07d30340-5622-4f08-831a-94baf808258d",
           "width": 0,
-          "x": 1461,
-          "y": 516,
+          "x": 1466,
+          "y": 435,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -13302,6 +13302,22 @@
           "x": 1149,
           "y": 21,
           "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "mediumhousebutton",
+          "persistentUuid": "9059ba7f-d1fa-4c04-b18c-3726d5732508",
+          "width": 0,
+          "x": 1135,
+          "y": 380,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -13557,7 +13573,7 @@
               "folded": true,
               "name": "BuildingName",
               "type": "string",
-              "value": "House"
+              "value": "Medhouse"
             }
           ],
           "effects": [
@@ -13708,6 +13724,17 @@
                 "value": "TextContainerCapability::TextContainerBehavior::SetValue"
               },
               "parameters": [
+                "GoldLabel",
+                "Text",
+                "=",
+                "\"Gold: \" + Gold"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
                 "StoneLabel",
                 "Text",
                 "=",
@@ -13724,43 +13751,8 @@
                 "=",
                 "\"Wood: \" + Lumber"
               ]
-            },
-            {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-              },
-              "parameters": [
-                "GoldLabel",
-                "Text",
-                "=",
-                "\"Gold: \" + Gold"
-              ]
-            }
-          ],
-          "variables": [
-            {
-              "folded": true,
-              "name": "Stone",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "folded": true,
-              "name": "Lumber",
-              "type": "number",
-              "value": 0
-            },
-            {
-              "name": "Gold",
-              "type": "number",
-              "value": 0
             }
           ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
         },
         {
           "colorB": 228,
@@ -14062,6 +14054,191 @@
                           ]
                         }
                       ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Toolbar::SelectedTool"
+                          },
+                          "parameters": [
+                            "",
+                            "=",
+                            "\"Mine\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            ">=",
+                            "20"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            "-",
+                            "20"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "powerstatiotile",
+                            "Indicator.X()",
+                            "Indicator.Y()",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Toolbar::SelectedTool"
+                          },
+                          "parameters": [
+                            "",
+                            "=",
+                            "\"Lumber\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            ">=",
+                            "20"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            "-",
+                            "20"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Treetile",
+                            "Indicator.X()",
+                            "Indicator.Y()",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Toolbar::SelectedTool"
+                          },
+                          "parameters": [
+                            "",
+                            "=",
+                            "\"Medhouse\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            ">=",
+                            "30"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            "-",
+                            "30"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Midhousetile",
+                            "Indicator.X()",
+                            "Indicator.Y()",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Right"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Toolbar::SetTool"
+                      },
+                      "parameters": [
+                        "",
+                        "Button",
+                        "\"None\"",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Indicator"
+                      ]
                     }
                   ]
                 }
@@ -14069,6 +14246,323 @@
             }
           ],
           "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Income",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\"",
+                    ">",
+                    "1.5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Gold",
+                    "+",
+                    "SceneInstancesCount(housetile)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Stone",
+                    "+",
+                    "SceneInstancesCount(MineTile)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Lumber",
+                    "+",
+                    "SceneInstancesCount(Treetile)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Gold",
+                    "+",
+                    "SceneInstancesCount(Midhousetile)"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "name": "Income animation",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ShakeObject::ShakeObject_PositionAngleScale::ShakeObject_PositionAngleScale"
+                          },
+                          "parameters": [
+                            "Tile",
+                            "ShakeObject_PositionAngleScale",
+                            "0.3",
+                            "0",
+                            "-3",
+                            "0",
+                            "10",
+                            "0.3",
+                            "",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PlaySound"
+                          },
+                          "parameters": [
+                            "",
+                            "Boop.wav",
+                            "",
+                            "25",
+                            "RandomFloatInRange(0.7,0.8)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "SmallHousetile",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "SmallHousetile.X() - 35",
+                            "SmallHousetile.Y() - 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+Gold\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "SmallHousetile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "powerstatiotile",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "powerstatiotile.X() - 38",
+                            "powerstatiotile.Y() - 38",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+Stone\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "powerstatiotile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "Treetile",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "Treetile.X() - 42",
+                            "Treetile.Y() - 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+Wood\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "Treetile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "Midhousetile",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "Midhousetile.X() - 35",
+                            "Midhousetile.Y() - 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+Gold\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "Midhousetile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "parameters": []
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
         }
       ],
       "layers": [
@@ -14083,21 +14577,10 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
-          "name": "",
+          "name": "background",
           "renderingType": "",
           "visibility": true,
-          "cameras": [
-            {
-              "defaultSize": true,
-              "defaultViewport": true,
-              "height": 0,
-              "viewportBottom": 1,
-              "viewportLeft": 0,
-              "viewportRight": 1,
-              "viewportTop": 0,
-              "width": 0
-            }
-          ],
+          "cameras": [],
           "effects": [
             {
               "effectType": "Scene3D::HemisphereLight",
@@ -14127,10 +14610,21 @@
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
-          "name": "background",
+          "name": "",
           "renderingType": "",
           "visibility": true,
-          "cameras": [],
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
           "effects": [
             {
               "effectType": "Scene3D::HemisphereLight",
@@ -14211,6 +14705,1836 @@
         {
           "name": "Scale",
           "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "ShakeObject_PositionAngleScale",
+          "type": "ShakeObject::ShakeObject_PositionAngleScale"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
+    },
+    {
+      "b": 209,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "level3",
+      "name": "level3",
+      "r": 209,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 209,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.3553434558816984,
+        "windowMask": false
+      },
+      "objectsGroups": [
+        {
+          "name": "Button",
+          "objects": [
+            {
+              "name": "midhousebutton"
+            },
+            {
+              "name": "TreeButton"
+            },
+            {
+              "name": "Powerstationbutton"
+            },
+            {
+              "name": "farmbutton"
+            },
+            {
+              "name": "HouseButton"
+            }
+          ]
+        },
+        {
+          "name": "Tile",
+          "objects": [
+            {
+              "name": "smallhousetile"
+            },
+            {
+              "name": "Midhousetile"
+            },
+            {
+              "name": "farmtile"
+            },
+            {
+              "name": "powerstationtile"
+            },
+            {
+              "name": "Treetile"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "name": "Gold",
+          "type": "number",
+          "value": 40
+        },
+        {
+          "folded": true,
+          "name": "Lumber",
+          "type": "number",
+          "value": 10
+        },
+        {
+          "folded": true,
+          "name": "Stone",
+          "type": "number",
+          "value": 10
+        }
+      ],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 140,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "Background",
+          "persistentUuid": "8ae50467-7bb9-4ac8-bf8c-376aa9d32f93",
+          "width": 1346,
+          "x": 1,
+          "y": -87,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 140,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "Background",
+          "persistentUuid": "5626dbdb-9899-447f-8d46-2d277cc06037",
+          "width": 1443,
+          "x": -62,
+          "y": 12,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 140,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "Background",
+          "persistentUuid": "0f53a4fb-a76a-4791-8f47-2c82c8e140e3",
+          "width": 1442,
+          "x": -116,
+          "y": 113,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 140,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "Background",
+          "persistentUuid": "73aba6cd-ed43-4f89-bbe6-dc36cfd739f2",
+          "width": 1442,
+          "x": -54,
+          "y": 216,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 140,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "Background",
+          "persistentUuid": "05a4fcc3-7437-4e43-a334-20350c8f7c05",
+          "width": 1442,
+          "x": -112,
+          "y": 316,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 140,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "Background",
+          "persistentUuid": "4cb467cc-94d0-4f17-bca9-3078ed374bd0",
+          "width": 1442,
+          "x": -52,
+          "y": 419,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 140,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "Background",
+          "persistentUuid": "abd03f26-22f4-42be-b15a-0fd87d2d0e60",
+          "width": 1442,
+          "x": -106,
+          "y": 517,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 130,
+          "keepRatio": true,
+          "layer": "Background",
+          "name": "Background",
+          "persistentUuid": "dc29311c-5c7f-437e-a450-c5085d059bcc",
+          "width": 1442,
+          "x": -46,
+          "y": 614,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 720,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "Vignette",
+          "persistentUuid": "a8eea71b-fea9-4a33-b7e6-a6a89137d287",
+          "width": 1283,
+          "x": -2,
+          "y": 0,
+          "zOrder": -10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Indicator",
+          "persistentUuid": "419684bd-2c63-464a-8e0e-7689b7e5bebc",
+          "width": 0,
+          "x": 1469,
+          "y": 507,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 48,
+          "height": 103,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "TreeButton",
+          "persistentUuid": "2f201a5f-03e2-404f-9ac7-42cdf42b6116",
+          "width": 101,
+          "x": 1112,
+          "y": 22,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 48,
+          "height": 112,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "HouseButton",
+          "persistentUuid": "a068894d-4bf0-4807-b2de-57a4494676ef",
+          "width": 104,
+          "x": 1113,
+          "y": 166,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 48,
+          "height": 85,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "Powerstationbutton",
+          "persistentUuid": "b496a251-1361-4d99-88b2-21d3bf7befe4",
+          "width": 93,
+          "x": 1128,
+          "y": 308,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 358,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "WoodLabel",
+          "persistentUuid": "4b2036e2-7c39-4cb1-81ff-4fe0e70d8785",
+          "width": 0,
+          "x": 74,
+          "y": 177,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "GoldLabel",
+          "persistentUuid": "d1a89215-b290-4425-b1ea-cb6911978c3c",
+          "width": 0,
+          "x": 73,
+          "y": 45,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "StoneLabel",
+          "persistentUuid": "3990483f-e39a-47e0-98dc-b4822a4f4419",
+          "width": 0,
+          "x": 78,
+          "y": 106,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "smallhousetile",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\house small blue_normal left.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 1
+                          },
+                          {
+                            "x": 85,
+                            "y": 1
+                          },
+                          {
+                            "x": 85,
+                            "y": 64
+                          },
+                          {
+                            "x": 0,
+                            "y": 64
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Midhousetile",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\house medium brown_normal left.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 1
+                          },
+                          {
+                            "x": 117,
+                            "y": 1
+                          },
+                          {
+                            "x": 117,
+                            "y": 79
+                          },
+                          {
+                            "x": 0,
+                            "y": 79
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "farmtile",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\farm_normal left.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 126,
+                            "y": 0
+                          },
+                          {
+                            "x": 126,
+                            "y": 97
+                          },
+                          {
+                            "x": 0,
+                            "y": 97
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "farmbutton",
+          "type": "SpriteToggleSwitch::SpriteToggleSwitch",
+          "variables": [
+            {
+              "folded": true,
+              "name": "BuildingName",
+              "type": "string",
+              "value": "farm"
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Outline",
+              "name": "Black",
+              "doubleParameters": {
+                "padding": 5,
+                "thickness": 5
+              },
+              "stringParameters": {
+                "color": "92;63;33"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Outline",
+              "name": "White",
+              "doubleParameters": {
+                "padding": 5,
+                "thickness": 5
+              },
+              "stringParameters": {
+                "color": "255;174;93"
+              },
+              "booleanParameters": {}
+            }
+          ],
+          "behaviors": [],
+          "content": {
+            "IsChecked": false
+          },
+          "childrenContent": {
+            "State": {
+              "adaptCollisionMaskAutomatically": false,
+              "updateIfNotVisible": false,
+              "animations": [
+                {
+                  "name": "Unchecked",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": false,
+                          "image": "assets\\Mine.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Checked",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": false,
+                          "image": "assets\\MineSelected.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "midhousebutton",
+          "type": "SpriteToggleSwitch::SpriteToggleSwitch",
+          "variables": [
+            {
+              "folded": true,
+              "name": "BuildingName",
+              "type": "string",
+              "value": "MidHouse"
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Outline",
+              "name": "Black",
+              "doubleParameters": {
+                "padding": 5,
+                "thickness": 5
+              },
+              "stringParameters": {
+                "color": "19;87;48"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Outline",
+              "name": "White",
+              "doubleParameters": {
+                "padding": 5,
+                "thickness": 5
+              },
+              "stringParameters": {
+                "color": "58;255;140"
+              },
+              "booleanParameters": {}
+            }
+          ],
+          "behaviors": [],
+          "content": {
+            "IsChecked": false
+          },
+          "childrenContent": {
+            "State": {
+              "adaptCollisionMaskAutomatically": false,
+              "updateIfNotVisible": false,
+              "animations": [
+                {
+                  "name": "Unchecked",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": false,
+                          "image": "assets\\House.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Checked",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": false,
+                          "image": "assets\\HouseSelected.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "powerstationtile",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\power station_normal left.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 173,
+                            "y": 0
+                          },
+                          {
+                            "x": 173,
+                            "y": 131
+                          },
+                          {
+                            "x": 0,
+                            "y": 131
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "folderName": "button",
+            "children": [
+              {
+                "objectName": "farmbutton"
+              },
+              {
+                "objectName": "midhousebutton"
+              }
+            ]
+          },
+          {
+            "folderName": "tile",
+            "children": [
+              {
+                "objectName": "smallhousetile"
+              },
+              {
+                "objectName": "farmtile"
+              },
+              {
+                "objectName": "powerstationtile"
+              },
+              {
+                "objectName": "Midhousetile"
+              }
+            ]
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "update variable counter"
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Toolbar",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Toolbar::UpdateToolSelection"
+                  },
+                  "parameters": [
+                    "",
+                    "Button",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Toolbar::SelectedTool"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "\"None\"",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "Indicator"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Toolbar::SelectedTool"
+                  },
+                  "parameters": [
+                    "",
+                    "!=",
+                    "\"None\"",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Montre"
+                  },
+                  "parameters": [
+                    "Indicator",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Indicator",
+                    "Animation",
+                    "=",
+                    "Toolbar::SelectedTool()"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Build",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "Indicator"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Indicator",
+                    "Opacity",
+                    "=",
+                    "200"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Toolbar::SelectedTool"
+                  },
+                  "parameters": [
+                    "",
+                    "!=",
+                    "\"None\"",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "Indicator",
+                        "=",
+                        "CursorX()",
+                        "=",
+                        "CursorY()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "HexagonalGrid::SnapObjectToPointyToppedHexagonalGrid"
+                      },
+                      "parameters": [
+                        "",
+                        "Indicator",
+                        "120",
+                        "140",
+                        "60",
+                        "+35",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "CollisionNP"
+                      },
+                      "parameters": [
+                        "Indicator",
+                        "Tile",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Not"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "SourisSurObjet"
+                          },
+                          "parameters": [
+                            "Button",
+                            "",
+                            "",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Toolbar::SelectedTool"
+                          },
+                          "parameters": [
+                            "",
+                            "=",
+                            "\"House\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Stone",
+                            ">=",
+                            "10"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Lumber",
+                            ">=",
+                            "10"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Stone",
+                            "-",
+                            "10"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Lumber",
+                            "-",
+                            "10"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "smallhousetile",
+                            "Indicator.X()",
+                            "Indicator.Y()",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Toolbar::SelectedTool"
+                          },
+                          "parameters": [
+                            "",
+                            "=",
+                            "\"Mine\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            ">=",
+                            "20"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            "-",
+                            "20"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "powerstationtile",
+                            "Indicator.X()",
+                            "Indicator.Y()",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Toolbar::SelectedTool"
+                          },
+                          "parameters": [
+                            "",
+                            "=",
+                            "\"Lumber\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            ">=",
+                            "20"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            "-",
+                            "20"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Treetile",
+                            "Indicator.X()",
+                            "Indicator.Y()",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Toolbar::SelectedTool"
+                          },
+                          "parameters": [
+                            "",
+                            "=",
+                            "\"Medhouse\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            ">=",
+                            "30"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Gold",
+                            "-",
+                            "30"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Midhousetile",
+                            "Indicator.X()",
+                            "Indicator.Y()",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Right"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Toolbar::SetTool"
+                      },
+                      "parameters": [
+                        "",
+                        "Button",
+                        "\"None\"",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Indicator"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Income",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\"",
+                    ">",
+                    "1.5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Gold",
+                    "+",
+                    "SceneInstancesCount(housetile)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Stone",
+                    "+",
+                    "SceneInstancesCount(MineTile)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Lumber",
+                    "+",
+                    "SceneInstancesCount(Treetile)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Gold",
+                    "+",
+                    "SceneInstancesCount(Midhousetile)"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "name": "Income animation",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ShakeObject::ShakeObject_PositionAngleScale::ShakeObject_PositionAngleScale"
+                          },
+                          "parameters": [
+                            "Tile",
+                            "ShakeObject_PositionAngleScale",
+                            "0.3",
+                            "0",
+                            "-3",
+                            "0",
+                            "10",
+                            "0.3",
+                            "",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PlaySound"
+                          },
+                          "parameters": [
+                            "",
+                            "Boop.wav",
+                            "",
+                            "25",
+                            "RandomFloatInRange(0.7,0.8)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "smallhousetile",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "smallhousetile.X() - 35",
+                            "smallhousetile.Y() - 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+Gold\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "smallhousetile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "powerstationtile",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "powerstationtile.X() - 38",
+                            "powerstationtile.Y() - 38",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+Stone\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "powerstationtile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "Treetile",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "Treetile.X() - 42",
+                            "Treetile.Y() - 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+Wood\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "Treetile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "Midhousetile",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "Midhousetile.X() - 35",
+                            "Midhousetile.Y() - 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+Gold\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "Midhousetile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "parameters": []
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Background",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "FloatingObject",
+          "type": "FloatingObject::FloatingObject"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "ShakeObject_PositionAngleScale",
+          "type": "ShakeObject::ShakeObject_PositionAngleScale"
         },
         {
           "name": "Text",
