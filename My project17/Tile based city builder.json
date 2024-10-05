@@ -2589,6 +2589,33 @@
         "name": "..\\..\\..\\Pictures\\Screenshots\\Screenshot 2024-09-29 234226.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/assets_house small blue_normal left.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "assets\\house small blue_normal left",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/assets_house small blue_normal left2.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "assets\\house small blue_normal left2",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/tall building orange_normal left.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\tall building orange_normal left.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -4560,8 +4587,8 @@
                             "Indicator",
                             "120",
                             "140",
-                            "60",
-                            "+35",
+                            "0",
+                            "0",
                             ""
                           ]
                         }
@@ -4657,8 +4684,8 @@
                               "parameters": [
                                 "",
                                 "smallhousetile",
-                                "Indicator.X()",
-                                "Indicator.Y()",
+                                "Indicator.X()-30",
+                                "Indicator.Y()-30",
                                 ""
                               ]
                             }
@@ -5129,7 +5156,7 @@
                       },
                       "parameters": [
                         "Carbon",
-                        "=",
+                        ">=",
                         "15"
                       ]
                     }
@@ -5221,7 +5248,7 @@
                           "parameters": [
                             "Gold",
                             ">",
-                            "20"
+                            "25"
                           ]
                         },
                         {
@@ -5325,32 +5352,6 @@
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
                   "actions": []
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberVariable"
-                      },
-                      "parameters": [
-                        "Gold",
-                        ">=",
-                        "25"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "Req1",
-                        ""
-                      ]
-                    }
-                  ]
                 },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -5837,7 +5838,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.33845094785192387,
+        "zoomFactor": 0.7257149322551848,
         "windowMask": false
       },
       "objectsGroups": [
@@ -5968,7 +5969,7 @@
           "persistentUuid": "c9a51a77-e7ef-444c-9542-813aecdcd5df",
           "width": 0,
           "x": 1140,
-          "y": 210,
+          "y": 35,
           "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
@@ -5983,7 +5984,7 @@
           "persistentUuid": "39301992-4684-46e4-94aa-8473450ebed3",
           "width": 0,
           "x": 1140,
-          "y": 385,
+          "y": 210,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -6183,7 +6184,7 @@
           "persistentUuid": "a4757355-ac90-41ee-b744-ad2def54600a",
           "width": 0,
           "x": 1140,
-          "y": 35,
+          "y": 385,
           "zOrder": 19,
           "numberProperties": [],
           "stringProperties": [],
@@ -15146,8 +15147,8 @@
                         "Indicator",
                         "120",
                         "140",
-                        "60",
-                        "+35",
+                        "0",
+                        "0",
                         ""
                       ]
                     }
@@ -15243,8 +15244,8 @@
                           "parameters": [
                             "",
                             "housetile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
+                            "Indicator.X()-30",
+                            "Indicator.Y()-30",
                             ""
                           ]
                         }
@@ -15343,8 +15344,8 @@
                           "parameters": [
                             "",
                             "farmtile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
+                            "Indicator.X()-50",
+                            "Indicator.Y()-60",
                             ""
                           ]
                         }
@@ -15928,13 +15929,12 @@
                     },
                     {
                       "type": {
-                        "value": "SceneInstancesCount"
+                        "value": "NumberVariable"
                       },
                       "parameters": [
-                        "",
-                        "farmtile",
+                        "Food",
                         ">=",
-                        "5"
+                        "100"
                       ]
                     }
                   ]
@@ -16033,32 +16033,6 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Gold",
-                    ">=",
-                    "50"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Req1",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
                     "value": "SceneInstancesCount"
                   },
                   "parameters": [
@@ -16076,32 +16050,6 @@
                   },
                   "parameters": [
                     "Req2",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Food",
-                    ">=",
-                    "100"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Req3",
                     ""
                   ]
                 }
@@ -16251,7 +16199,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": true,
-        "zoomFactor": 0.5653158055126322,
+        "zoomFactor": 0.34375202416123213,
         "windowMask": false
       },
       "objectsGroups": [
@@ -16748,6 +16696,39 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "Req4",
+          "persistentUuid": "4424b521-484d-4f38-9099-e899e7ad1822",
+          "width": 320,
+          "x": 672,
+          "y": 32,
+          "zOrder": 23,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Level_over",
+          "persistentUuid": "845600b2-5dff-45d8-b0fc-adaa40f4bf92",
+          "width": 0,
+          "x": 352,
+          "y": 960,
+          "zOrder": 24,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -16832,16 +16813,17 @@
           ],
           "animations": [
             {
-              "name": "",
+              "name": "assets\\house small blue_normal left",
               "useMultipleDirections": false,
               "directions": [
                 {
                   "looping": false,
+                  "metadata": "{\"pskl\":{}}",
                   "timeBetweenFrames": 0.08,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "assets\\house small blue_normal left.png",
+                      "image": "assets\\house small blue_normal left",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -16857,20 +16839,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 0,
+                            "x": 12,
                             "y": 1
                           },
                           {
-                            "x": 85,
+                            "x": 79,
                             "y": 1
                           },
                           {
-                            "x": 85,
-                            "y": 64
+                            "x": 79,
+                            "y": 63
                           },
                           {
-                            "x": 0,
-                            "y": 64
+                            "x": 12,
+                            "y": 63
                           }
                         ]
                       ]
@@ -17457,6 +17439,47 @@
             "characterSize": 40,
             "color": "255;255;255"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Req4",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Req4",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Req4",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -17476,6 +17499,9 @@
               },
               {
                 "objectName": "Req3"
+              },
+              {
+                "objectName": "Req4"
               }
             ]
           },
@@ -17548,7 +17574,7 @@
                 "Co2lable",
                 "Text",
                 "=",
-                "\"Carbon :\"+Carbon+\"/15\""
+                "\"Carbon :\"+Carbon+\"/25\""
               ]
             },
             {
@@ -17592,7 +17618,7 @@
                 "Req2",
                 "Text",
                 "=",
-                "\"House :\" +ToString(SceneInstancesCount(housetile)) + \"/7\""
+                "\"House :\" +ToString(SceneInstancesCount(SmallHousetile)) + \"/7\""
               ]
             },
             {
@@ -17604,6 +17630,17 @@
                 "Text",
                 "=",
                 "\"Food: \" + Food + \"/100\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Req4",
+                "Text",
+                "=",
+                "\"powerstation:\" +ToString(SceneInstancesCount(powerstatiotile)) + \"/5\""
               ]
             }
           ]
@@ -17749,7 +17786,7 @@
                     "Req1",
                     "Text",
                     "=",
-                    "\"House:\" +ToString(SceneInstancesCount(smallhousetile)) + \"/5\""
+                    "\"House:\" +ToString(SceneInstancesCount(smallhousetile)) + \"/7\""
                   ]
                 },
                 {
@@ -17772,6 +17809,17 @@
                     "Text",
                     "=",
                     "\"Food: \" + Food + \"/100\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Req4",
+                    "Text",
+                    "=",
+                    "\"powerstation:\" +ToString(SceneInstancesCount(powerstatiotile)) + \"/5\""
                   ]
                 }
               ]
@@ -17818,8 +17866,8 @@
                         "Indicator",
                         "120",
                         "140",
-                        "60",
-                        "+35",
+                        "0",
+                        "0",
                         ""
                       ]
                     }
@@ -17935,8 +17983,8 @@
                           "parameters": [
                             "",
                             "SmallHousetile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
+                            "Indicator.X()-30",
+                            "Indicator.Y()-30",
                             ""
                           ]
                         }
@@ -18005,8 +18053,8 @@
                           "parameters": [
                             "",
                             "powerstatiotile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
+                            "Indicator.X()-60",
+                            "Indicator.Y()-60",
                             ""
                           ]
                         }
@@ -18055,8 +18103,8 @@
                           "parameters": [
                             "",
                             "Treetile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
+                            "Indicator.X()-60",
+                            "Indicator.Y()-70",
                             ""
                           ]
                         }
@@ -18105,8 +18153,8 @@
                           "parameters": [
                             "",
                             "farmtile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
+                            "Indicator.X()-50",
+                            "Indicator.Y()-60",
                             ""
                           ]
                         }
@@ -18276,7 +18324,7 @@
                   "parameters": [
                     "Carbon",
                     "+",
-                    "SceneInstancesCount(housetile)"
+                    "SceneInstancesCount(SmallHousetile)"
                   ]
                 },
                 {
@@ -18310,7 +18358,7 @@
                       },
                       "parameters": [
                         "Carbon",
-                        "<=",
+                        "<",
                         "0"
                       ]
                     }
@@ -18646,6 +18694,299 @@
             }
           ],
           "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "level Logic",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Carbon",
+                    ">=",
+                    "25"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "RemoveTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "Text",
+                    "=",
+                    "\"Level Failed\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "200"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "SceneWindowHeight()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "SceneWindowWidth()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"level3\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Gold",
+                        ">",
+                        "50"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Food",
+                        ">=",
+                        "100"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "SmallHousetile",
+                        ">=",
+                        "7"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "powerstatiotile",
+                        ">=",
+                        "5"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "RemoveTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "Text",
+                    "=",
+                    "\"Level Complete\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "200"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "SceneWindowHeight()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "SceneWindowWidth()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"level4\"",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Goal ",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "",
+                    "SmallHousetile",
+                    ">=",
+                    "7"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Req2",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "",
+                    "powerstatiotile",
+                    ">=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Req4",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
         }
       ],
       "layers": [
@@ -18826,7 +19167,7 @@
       "title": "",
       "v": 209,
       "uiSettings": {
-        "grid": false,
+        "grid": true,
         "gridType": "rectangular",
         "gridWidth": 32,
         "gridHeight": 32,
@@ -18834,8 +19175,8 @@
         "gridOffsetY": 0,
         "gridColor": 10401023,
         "gridAlpha": 0.8,
-        "snap": false,
-        "zoomFactor": 0.3553434558816984,
+        "snap": true,
+        "zoomFactor": 0.40575189059438377,
         "windowMask": false
       },
       "objectsGroups": [
@@ -18878,6 +19219,20 @@
               "name": "Treetile"
             }
           ]
+        },
+        {
+          "name": "carbon_generators",
+          "objects": [
+            {
+              "name": "smallhousetile"
+            },
+            {
+              "name": "Midhousetile"
+            },
+            {
+              "name": "powerstationtile"
+            }
+          ]
         }
       ],
       "variables": [
@@ -18888,13 +19243,19 @@
         },
         {
           "folded": true,
-          "name": "Lumber",
+          "name": "Carbon",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "Food",
           "type": "number",
           "value": 20
         },
         {
           "folded": true,
-          "name": "Stone",
+          "name": "resources",
           "type": "number",
           "value": 20
         }
@@ -19046,7 +19407,7 @@
           "name": "Vignette",
           "persistentUuid": "a8eea71b-fea9-4a33-b7e6-a6a89137d287",
           "width": 1283,
-          "x": -2,
+          "x": 0,
           "y": 0,
           "zOrder": -10,
           "numberProperties": [],
@@ -19062,8 +19423,8 @@
           "name": "Indicator",
           "persistentUuid": "419684bd-2c63-464a-8e0e-7689b7e5bebc",
           "width": 0,
-          "x": 1469,
-          "y": 507,
+          "x": 1468,
+          "y": 538,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -19072,15 +19433,15 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 48,
-          "height": 103,
+          "depth": 47.52475247524753,
+          "height": 101.98019801980197,
           "keepRatio": true,
           "layer": "UI",
           "name": "TreeButton",
           "persistentUuid": "2f201a5f-03e2-404f-9ac7-42cdf42b6116",
-          "width": 101,
-          "x": 1112,
-          "y": 22,
+          "width": 100,
+          "x": 1116,
+          "y": 32,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -19089,15 +19450,15 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 48,
-          "height": 112,
+          "depth": 46.15384615384616,
+          "height": 107.69230769230771,
           "keepRatio": true,
           "layer": "UI",
           "name": "HouseButton",
           "persistentUuid": "a068894d-4bf0-4807-b2de-57a4494676ef",
-          "width": 104,
-          "x": 1115,
-          "y": 150,
+          "width": 100,
+          "x": 1116,
+          "y": 160,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -19106,32 +19467,201 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 48,
-          "height": 108,
+          "depth": 47.05882352941177,
+          "height": 105.88235294117646,
           "keepRatio": true,
           "layer": "UI",
           "name": "Powerstationbutton",
           "persistentUuid": "b496a251-1361-4d99-88b2-21d3bf7befe4",
-          "width": 102,
-          "x": 1119,
-          "y": 285,
+          "width": 100,
+          "x": 1120,
+          "y": 416,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         },
         {
-          "angle": 358,
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 44,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "GoldLabel",
+          "persistentUuid": "d1a89215-b290-4425-b1ea-cb6911978c3c",
+          "width": 289,
+          "x": 32,
+          "y": 20,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 44,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "ResourcesLabel",
+          "persistentUuid": "3990483f-e39a-47e0-98dc-b4822a4f4419",
+          "width": 288,
+          "x": 32,
+          "y": 84,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 52.747252747252745,
+          "height": 104.3956043956044,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "farmbutton",
+          "persistentUuid": "81a442d9-e951-427e-97d5-8299e2016e66",
+          "width": 100,
+          "x": 1116,
+          "y": 288,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 45.283018867924525,
+          "height": 98.11320754716981,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "midhousebutton",
+          "persistentUuid": "3508fd4b-fe7b-4396-94f5-75a98cb3daf2",
+          "width": 100,
+          "x": 1116,
+          "y": 544,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 44,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "FoodLabel",
+          "persistentUuid": "57ebdf78-12e0-4a18-abb7-740bd4c47d10",
+          "width": 224,
+          "x": 32,
+          "y": 160,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
           "customSize": false,
           "height": 0,
           "keepRatio": true,
           "layer": "UI",
-          "name": "FoodLabel",
-          "persistentUuid": "4b2036e2-7c39-4cb1-81ff-4fe0e70d8785",
+          "name": "Goal_Text",
+          "persistentUuid": "097025c1-a874-4de2-81fd-4fa4b77075b0",
           "width": 0,
-          "x": 74,
-          "y": 177,
-          "zOrder": 9,
+          "x": 320,
+          "y": 0,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "Req1",
+          "persistentUuid": "38b6b9bf-00d8-4843-a594-5c1e7512c4e5",
+          "width": 480,
+          "x": 448,
+          "y": 0,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "Req2",
+          "persistentUuid": "6ac27a4c-3cfe-4348-854d-a22ae8e61821",
+          "width": 672,
+          "x": 448,
+          "y": 64,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "Req3",
+          "persistentUuid": "3f229ea5-fb99-443a-a9aa-675bfb423c2d",
+          "width": 448,
+          "x": 448,
+          "y": 128,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "Req4",
+          "persistentUuid": "07d8d168-fcdc-44ae-b7a1-e487aed8af79",
+          "width": 480,
+          "x": 448,
+          "y": 192,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "Co2lable",
+          "persistentUuid": "782e4e03-ef5f-441f-b069-9f3c7abddf42",
+          "width": 0,
+          "x": 32,
+          "y": 244,
+          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -19142,62 +19672,12 @@
           "height": 0,
           "keepRatio": true,
           "layer": "",
-          "name": "GoldLabel",
-          "persistentUuid": "d1a89215-b290-4425-b1ea-cb6911978c3c",
+          "name": "Level_over",
+          "persistentUuid": "f2aa65bb-5e08-4659-848a-02af2d81cd21",
           "width": 0,
-          "x": 73,
-          "y": 45,
-          "zOrder": 10,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "ResourcesLabel",
-          "persistentUuid": "3990483f-e39a-47e0-98dc-b4822a4f4419",
-          "width": 0,
-          "x": 78,
-          "y": 106,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 48,
-          "height": 95,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "farmbutton",
-          "persistentUuid": "81a442d9-e951-427e-97d5-8299e2016e66",
-          "width": 91,
-          "x": 1115,
-          "y": 403,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 48,
-          "height": 104,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "midhousebutton",
-          "persistentUuid": "3508fd4b-fe7b-4396-94f5-75a98cb3daf2",
-          "width": 106,
-          "x": 1101,
-          "y": 528,
-          "zOrder": 13,
+          "x": 448,
+          "y": 864,
+          "zOrder": 21,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -19294,7 +19774,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "assets\\house medium brown_normal left.png",
+                      "image": "assets\\tall building orange_normal left.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -19314,16 +19794,16 @@
                             "y": 1
                           },
                           {
-                            "x": 117,
+                            "x": 163,
                             "y": 1
                           },
                           {
-                            "x": 117,
-                            "y": 79
+                            "x": 163,
+                            "y": 192
                           },
                           {
                             "x": 0,
-                            "y": 79
+                            "y": 192
                           }
                         ]
                       ]
@@ -19681,11 +20161,292 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Goal_Text",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Goal : ",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Goal : ",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Req1",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Req1",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Req1",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Req2",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Req2",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Req2",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Req3",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Req3",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Req3",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Req4",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Req4",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Req4",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 40,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Food_noti",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "FloatingObject",
+              "type": "FloatingObject::FloatingObject",
+              "Tween": "Tween",
+              "Duration": 1.5,
+              "DeltaY": -25
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "string": "- Food",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 25,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "- Food",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 25,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
+          {
+            "folderName": "Text",
+            "children": [
+              {
+                "objectName": "Goal_Text"
+              },
+              {
+                "objectName": "Req1"
+              },
+              {
+                "objectName": "Req2"
+              },
+              {
+                "objectName": "Req3"
+              },
+              {
+                "objectName": "Req4"
+              },
+              {
+                "objectName": "Food_noti"
+              }
+            ]
+          },
           {
             "folderName": "button",
             "children": [
@@ -19749,10 +20510,21 @@
                 "value": "TextContainerCapability::TextContainerBehavior::SetValue"
               },
               "parameters": [
+                "Co2lable",
+                "Text",
+                "=",
+                "\"Carbon :\"+Carbon+\"/30\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
                 "FoodLabel",
                 "Text",
                 "=",
-                "\"Wood: \" + Lumber"
+                "\"Food: \" + Food"
               ]
             },
             {
@@ -19763,7 +20535,51 @@
                 "ResourcesLabel",
                 "Text",
                 "=",
-                "\"Stone: \" + Stone"
+                "\"Resources: \" + resources"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Req1",
+                "Text",
+                "=",
+                "\"Gold : \" + Gold + \"/500\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Req2",
+                "Text",
+                "=",
+                "\"Food: \" + Food + \"/1500\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Req3",
+                "Text",
+                "=",
+                "\"Resources : \" + resources + \"/100\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Req4",
+                "Text",
+                "=",
+                "\"Highrise:\" +ToString(SceneInstancesCount(Midhousetile)) + \"/3\""
               ]
             }
           ]
@@ -19900,6 +20716,50 @@
                     "=",
                     "200"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Req1",
+                    "Text",
+                    "=",
+                    "\"Gold : \" + Gold + \"/500\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Req2",
+                    "Text",
+                    "=",
+                    "\"Food: \" + Food + \"/100\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Req3",
+                    "Text",
+                    "=",
+                    "\"Resources : \" + resources + \"/100\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Req4",
+                    "Text",
+                    "=",
+                    "\"Highrise:\" +ToString(SceneInstancesCount(Midhousetile)) + \"/10\""
+                  ]
                 }
               ]
             },
@@ -19945,8 +20805,8 @@
                         "Indicator",
                         "120",
                         "140",
-                        "60",
-                        "+35",
+                        "0",
+                        "0",
                         ""
                       ]
                     }
@@ -20018,7 +20878,7 @@
                             "value": "NumberVariable"
                           },
                           "parameters": [
-                            "Stone",
+                            "resources",
                             ">=",
                             "10"
                           ]
@@ -20028,9 +20888,9 @@
                             "value": "NumberVariable"
                           },
                           "parameters": [
-                            "Lumber",
+                            "Food",
                             ">=",
-                            "10"
+                            "15"
                           ]
                         }
                       ],
@@ -20040,7 +20900,7 @@
                             "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Stone",
+                            "resources",
                             "-",
                             "10"
                           ]
@@ -20050,9 +20910,9 @@
                             "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Lumber",
+                            "Food",
                             "-",
-                            "10"
+                            "15"
                           ]
                         },
                         {
@@ -20062,8 +20922,8 @@
                           "parameters": [
                             "",
                             "smallhousetile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
+                            "Indicator.X()-30",
+                            "Indicator.Y()-30",
                             ""
                           ]
                         }
@@ -20079,77 +20939,7 @@
                           "parameters": [
                             "",
                             "=",
-                            "\"MidHouse\"",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "NumberVariable"
-                          },
-                          "parameters": [
-                            "Stone",
-                            ">=",
-                            "15"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "NumberVariable"
-                          },
-                          "parameters": [
-                            "Lumber",
-                            ">=",
-                            "15"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "Stone",
-                            "-",
-                            "15"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "Lumber",
-                            "-",
-                            "15"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "Midhousetile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
-                            ""
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "Toolbar::SelectedTool"
-                          },
-                          "parameters": [
-                            "",
-                            "=",
-                            "\"Mine\"",
+                            "\"resources\"",
                             ""
                           ]
                         },
@@ -20159,6 +20949,16 @@
                           },
                           "parameters": [
                             "Gold",
+                            ">=",
+                            "25"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
                             ">=",
                             "20"
                           ]
@@ -20171,6 +20971,16 @@
                           },
                           "parameters": [
                             "Gold",
+                            "-",
+                            "25"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
                             "-",
                             "20"
                           ]
@@ -20182,8 +20992,8 @@
                           "parameters": [
                             "",
                             "powerstationtile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
+                            "Indicator.X()-60",
+                            "Indicator.Y()-70",
                             ""
                           ]
                         }
@@ -20199,7 +21009,7 @@
                           "parameters": [
                             "",
                             "=",
-                            "\"Lumber\"",
+                            "\"Food\"",
                             ""
                           ]
                         },
@@ -20210,7 +21020,7 @@
                           "parameters": [
                             "Gold",
                             ">=",
-                            "20"
+                            "15"
                           ]
                         }
                       ],
@@ -20222,7 +21032,7 @@
                           "parameters": [
                             "Gold",
                             "-",
-                            "20"
+                            "15"
                           ]
                         },
                         {
@@ -20260,7 +21070,7 @@
                           "parameters": [
                             "Gold",
                             ">=",
-                            "20"
+                            "30"
                           ]
                         }
                       ],
@@ -20272,7 +21082,7 @@
                           "parameters": [
                             "Gold",
                             "-",
-                            "20"
+                            "30"
                           ]
                         },
                         {
@@ -20282,8 +21092,78 @@
                           "parameters": [
                             "",
                             "farmtile",
-                            "Indicator.X()",
-                            "Indicator.Y()",
+                            "Indicator.X()-50",
+                            "Indicator.Y()-60",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Toolbar::SelectedTool"
+                          },
+                          "parameters": [
+                            "",
+                            "=",
+                            "\"MidHouse\"",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "resources",
+                            ">=",
+                            "25"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
+                            ">=",
+                            "50"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "resources",
+                            "-",
+                            "25"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
+                            "-",
+                            "50"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Midhousetile",
+                            "Indicator.X()-60",
+                            "Indicator.Y()-100",
                             ""
                           ]
                         }
@@ -20296,11 +21176,28 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "MouseButtonReleased"
+                        "value": "BuiltinCommonInstructions::Or"
                       },
-                      "parameters": [
-                        "",
-                        "Right"
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Right"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "KeyPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "Escape"
+                          ]
+                        }
                       ]
                     }
                   ],
@@ -20396,7 +21293,7 @@
                   "parameters": [
                     "Gold",
                     "+",
-                    "SceneInstancesCount(smallhousetile)"
+                    "SceneInstancesCount(smallhousetile) + SceneInstancesCount(Midhousetile)*5"
                   ]
                 },
                 {
@@ -20404,7 +21301,7 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "Stone",
+                    "resources",
                     "+",
                     "SceneInstancesCount(powerstationtile)"
                   ]
@@ -20414,33 +21311,97 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "Lumber",
+                    "Food",
                     "+",
+                    "SceneInstancesCount(Treetile) + SceneInstancesCount(farmtile)*2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Carbon",
+                    "+",
+                    "SceneInstancesCount(smallhousetile) + SceneInstancesCount(powerstationtile)*2 + SceneInstancesCount(Midhousetile)*3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Food",
+                    "-",
+                    "SceneInstancesCount(smallhousetile) + SceneInstancesCount(powerstationtile) + SceneInstancesCount(Midhousetile)*3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Carbon",
+                    "-",
                     "SceneInstancesCount(Treetile)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Gold",
-                    "+",
-                    "SceneInstancesCount(Midhousetile)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Lumber",
-                    "+",
-                    "SceneInstancesCount(farmtile)"
                   ]
                 }
               ],
               "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Carbon",
+                        "<",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Carbon",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Food",
+                        "<=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Gold",
+                        "-",
+                        "SceneInstancesCount(smallhousetile) + SceneInstancesCount(Midhousetile)*5"
+                      ]
+                    }
+                  ]
+                },
                 {
                   "colorB": 228,
                   "colorG": 176,
@@ -20452,7 +21413,19 @@
                   "events": [
                     {
                       "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [],
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "SceneInstancesCount"
+                          },
+                          "parameters": [
+                            "",
+                            "Tile",
+                            ">=",
+                            "1"
+                          ]
+                        }
+                      ],
                       "actions": [
                         {
                           "type": {
@@ -20488,7 +21461,18 @@
                     {
                       "type": "BuiltinCommonInstructions::ForEach",
                       "object": "smallhousetile",
-                      "conditions": [],
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
+                            ">",
+                            "0"
+                          ]
+                        }
+                      ],
                       "actions": [
                         {
                           "type": {
@@ -20499,6 +21483,30 @@
                             "IncomeLabel",
                             "smallhousetile.X() - 35",
                             "smallhousetile.Y() - 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Carban_notific",
+                            "smallhousetile.X() + 25",
+                            "smallhousetile.Y() + 25",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Food_noti",
+                            "smallhousetile.X() - 25",
+                            "smallhousetile.Y() + 35",
                             ""
                           ]
                         },
@@ -20515,6 +21523,28 @@
                         },
                         {
                           "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Carban_notific",
+                            "Text",
+                            "=",
+                            "\"+carbon\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Food_noti",
+                            "Text",
+                            "=",
+                            "\"- Food\""
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "ChangePlan"
                           },
                           "parameters": [
@@ -20527,8 +21557,19 @@
                     },
                     {
                       "type": "BuiltinCommonInstructions::ForEach",
-                      "object": "powerstationtile",
-                      "conditions": [],
+                      "object": "smallhousetile",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
+                            "<=",
+                            "0"
+                          ]
+                        }
+                      ],
                       "actions": [
                         {
                           "type": {
@@ -20536,9 +21577,9 @@
                           },
                           "parameters": [
                             "",
-                            "IncomeLabel",
-                            "powerstationtile.X() - 38",
-                            "powerstationtile.Y() - 38",
+                            "Carban_notific",
+                            "smallhousetile.X() + 25",
+                            "smallhousetile.Y() + 25",
                             ""
                           ]
                         },
@@ -20547,20 +21588,10 @@
                             "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                           },
                           "parameters": [
-                            "IncomeLabel",
+                            "Carban_notific",
                             "Text",
                             "=",
-                            "\"+Stone\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ChangePlan"
-                          },
-                          "parameters": [
-                            "IncomeLabel",
-                            "=",
-                            "powerstationtile.ZOrder() + 200"
+                            "\"+carbon\""
                           ]
                         }
                       ]
@@ -20590,7 +21621,7 @@
                             "IncomeLabel",
                             "Text",
                             "=",
-                            "\"+Wood\""
+                            "\"+Food\""
                           ]
                         },
                         {
@@ -20603,44 +21634,48 @@
                             "Treetile.ZOrder() + 200"
                           ]
                         }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::ForEach",
-                      "object": "Midhousetile",
-                      "conditions": [],
-                      "actions": [
+                      ],
+                      "events": [
                         {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "IncomeLabel",
-                            "Midhousetile.X() - 35",
-                            "Midhousetile.Y() - 30",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "IncomeLabel",
-                            "Text",
-                            "=",
-                            "\"+Gold\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ChangePlan"
-                          },
-                          "parameters": [
-                            "IncomeLabel",
-                            "=",
-                            "Midhousetile.ZOrder() + 200"
+                          "type": "BuiltinCommonInstructions::ForEach",
+                          "object": "Treetile",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "SceneInstancesCount"
+                              },
+                              "parameters": [
+                                "",
+                                "carbon_generators",
+                                ">",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "Carban_notific",
+                                "Treetile.X() + 25",
+                                "Treetile.Y() + 25",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "Carban_notific",
+                                "Text",
+                                "=",
+                                "\"-carbon\""
+                              ]
+                            }
                           ]
                         }
                       ]
@@ -20670,7 +21705,7 @@
                             "IncomeLabel",
                             "Text",
                             "=",
-                            "\"+Lumber\""
+                            "\"+ 2 Food\""
                           ]
                         },
                         {
@@ -20684,6 +21719,282 @@
                           ]
                         }
                       ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "powerstationtile",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
+                            ">",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "powerstationtile.X() - 38",
+                            "powerstationtile.Y() - 38",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Carban_notific",
+                            "powerstationtile.X() - 48",
+                            "powerstationtile.Y() + 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Food_noti",
+                            "powerstationtile.X() + 80",
+                            "powerstationtile.Y() + 45",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+resources\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Food_noti",
+                            "Text",
+                            "=",
+                            "\"- Food\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Carban_notific",
+                            "Text",
+                            "=",
+                            "\"+ 2 carbon\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "powerstationtile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "powerstationtile",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
+                            "<=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Carban_notific",
+                            "powerstationtile.X() + 25",
+                            "powerstationtile.Y() + 25",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Carban_notific",
+                            "Text",
+                            "=",
+                            "\"+carbon\""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "Midhousetile",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
+                            ">",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "IncomeLabel",
+                            "Midhousetile.X() - 35",
+                            "Midhousetile.Y() - 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Carban_notific",
+                            "Midhousetile.X() - 48",
+                            "Midhousetile.Y() + 30",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Food_noti",
+                            "Midhousetile.X() + 40",
+                            "Midhousetile.Y() + 35",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "Text",
+                            "=",
+                            "\"+Gold\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Carban_notific",
+                            "Text",
+                            "=",
+                            "\"+ 3 carbon\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Food_noti",
+                            "Text",
+                            "=",
+                            "\"- 3 Food\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ChangePlan"
+                          },
+                          "parameters": [
+                            "IncomeLabel",
+                            "=",
+                            "Midhousetile.ZOrder() + 200"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "Midhousetile",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Food",
+                            "<=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "Carban_notific",
+                            "Midhousetile.X() + 25",
+                            "Midhousetile.Y() + 25",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Carban_notific",
+                            "Text",
+                            "=",
+                            "\"+carbon\""
+                          ]
+                        }
+                      ]
                     }
                   ],
                   "parameters": []
@@ -20694,9 +22005,287 @@
           "parameters": []
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "level Logic",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Carbon",
+                        ">=",
+                        "30"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Food",
+                        "<=",
+                        "-10"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "RemoveTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "Text",
+                    "=",
+                    "\"Level Failed\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "200"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "SceneWindowHeight()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "SceneWindowWidth()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"level4\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::And"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Gold",
+                        ">",
+                        "500"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Food",
+                        ">=",
+                        "1500"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "resources",
+                        ">=",
+                        "100"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "Midhousetile",
+                        ">=",
+                        "3"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "RemoveTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Income\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "Text",
+                    "=",
+                    "\"Level Complete\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "200"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "SceneWindowHeight()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "Level_over",
+                    "=",
+                    "SceneWindowWidth()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"level5\"",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Goal ",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneInstancesCount"
+                  },
+                  "parameters": [
+                    "",
+                    "Midhousetile",
+                    ">=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Req4",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
         }
       ],
       "layers": [
